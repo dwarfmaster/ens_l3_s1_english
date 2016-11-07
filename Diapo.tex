@@ -1,7 +1,6 @@
 \documentclass[12pt]{beamer}
 
 \input{init.tex}
-\usepackage{tikz}
 
 %Put a nice theme
 \usetheme{Berkeley}
@@ -39,6 +38,10 @@ How to ensure the inviolability of data without trusting a $3^{\mathrm {rd}}$ pa
 % I : 2 frames % luc
 
 \begin{frame}
+    \frametitle{Hash function}
+\end{frame}
+
+\begin{frame}
     \frametitle{Asymmetric Encryption}
     \begin{columns}[T]
         \begin{column}{.48\textwidth}
@@ -64,43 +67,6 @@ How to ensure the inviolability of data without trusting a $3^{\mathrm {rd}}$ pa
                 m' &\equiv c^d (\text{mod } n) \\
                 m' = m &\tilde{\longrightarrow} M\\
             \end{align*}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Digital signature}
-    \begin{columns}[T]
-        \begin{column}{.48\linewidth}
-            {\color{blue}\rule{\linewidth}{4pt}
-
-            Properties}
-
-            \begin{itemize}
-                \item Authentification
-                \item Non-repudiation
-                \item Integrity
-            \end{itemize}
-        \end{column}
-        \hfill
-        \begin{column}{.48\linewidth}
-            {\color{red}\rule{\linewidth}{4pt}
-
-            Implementation}
-
-            \begin{center}
-            \begin{tikzpicture}
-                \draw (0,0) node {$M$};
-                \draw [->] (0,-0.2) -- (0,-0.8);
-                \draw (0,-1) node {$h$};
-                \draw [->] (0,-1.2) -- (0,-1.8);
-                \draw (0,-2) node {$s$};
-                \draw [->] (0,-2.2) -- (0,-2.8);
-                \draw (0,-3) node {$(M,s)$};
-                \draw (0.2,-0.2) .. controls (1,-1.5) .. (0.2,-2.8) [->];
-            \end{tikzpicture}
-            \end{center}
-
         \end{column}
     \end{columns}
 \end{frame}
@@ -216,9 +182,20 @@ A simple rule : Always choose the longest chain
 
 \begin{frame}
 \frametitle{Why it can't fail ?}
-$p$ the probability of adding a honest block and $q = (1-p)$.
+$p$ the probability of adding a honest block and $q = (1-p)$ the probability the attacker get a false block
+\begin{itemize}
+\item if $q < p$ :
+\begin{itemize}
+\item reduce gap by one : $\frac{q}{p}$
+\item reduce gap by $n$ : $\left (\frac{q}{p}\right )^n$
+\end{itemize}
+\item if $p \ge q$ it is certain that the adversary will win : 
+\end{itemize}
+\begin{center}
+\color{red!50!black} \large The attack of the $51\%$
+\end{center}
 
-
+In practice :
 
 \end{frame}
 
