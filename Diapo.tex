@@ -3,12 +3,20 @@
 \input{init.tex}
 
 %Put a nice theme
+\usetheme{Berkeley}
 
+\title{The Blockchain technology through the bitcoin example}
+\author{Luc Chabassier \and Thibaut Pérami}
+\institute{École Normale Supérieure}
 
 \begin{document}
 
 \begin{frame}
 Beautiful Picture here. %both
+\end{frame}
+
+\begin{frame}
+    \maketitle
 \end{frame}
 
 \begin{frame}
@@ -22,16 +30,51 @@ How to ensure the inviolability of data without trusting a $3^{\mathrm {rd}}$ pa
 
 \begin{frame}
 
-\begin{enumerate} %thibaut
-\item People Authentication 
-\item Blockchain
-\item Applications (Bitcoin)
-\end{enumerate}
+\tableofcontents
 
 \end{frame}
 
+\section{Authentification}
 % I : 2 frames % luc
+
+\begin{frame}
+    \frametitle{Hash function}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Asymmetric Encryption}
+    \begin{columns}[T]
+        \begin{column}{.48\textwidth}
+            {\color{blue}\rule{\linewidth}{4pt}
+
+            Principle}
+            \includegraphics[width=\linewidth]{public-key.png}
+        \end{column}
+        \hfill
+        \begin{column}{.48\linewidth}
+            {\color{green}\rule{\linewidth}{4pt}
+
+            The RSA example}
+
+            Public key : $(n,e)$.
+
+            Private key : $d$.
+
+            \begin{align*}
+                M & \tilde{\longrightarrow} m \\
+                c &\equiv m^e (\text{mod } n) \\
+                \text{Bob } & \text{sends $c$ to Alice} \\
+                m' &\equiv c^d (\text{mod } n) \\
+                m' = m &\tilde{\longrightarrow} M\\
+            \end{align*}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Blockchain}
 % II : 3 frames  %thibaut
+
+\section{Applications}
 % III : 1/2 frames %luc
 
 \begin{frame}
