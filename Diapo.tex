@@ -20,7 +20,13 @@ Beautiful Picture here. %both
 \end{frame}
 
 \begin{frame}
-In a world more and more connected, ... (Introduction) % thibaut
+In a world more and more connected, We all do our transactions by internet and we store money in electronic banks. Notary are also entrusted with contract.
+
+By do doing so we trust a third party and its central server which be corrupted:
+\begin{itemize}
+ \item on human side (investing your money in some unsafe place)
+ \item or on computer side (being hacked by other people)
+ \end{itemize}
 
 \
 
@@ -160,7 +166,7 @@ A simple rule : Always choose the longest chain
             {\color{blue}\rule{\linewidth}{4pt}
             One version}
             
-			Every node agree on the longest chain : it is costly to have forgery longer than original
+			Every node agree on the longest chain: it is costly to have forgery longer than original
             
 
         \end{column}
@@ -169,7 +175,7 @@ A simple rule : Always choose the longest chain
             {\color{green!40!black}\rule{\linewidth}{4pt}
             CPU Time Majority}
             
-            Finding the right nonce is random : the one which tries more times succeed
+            Finding the right nonce is random: the one which tries more times succeed
 
 
         \end{column}
@@ -186,8 +192,8 @@ $p$ the probability of adding a honest block and $q = (1-p)$ the probability the
 \begin{itemize}
 \item if $q < p$ :
 \begin{itemize}
-\item reduce gap by one : $\frac{q}{p}$
-\item reduce gap by $n$ : $\left (\frac{q}{p}\right )^n$
+\item reduce gap by one: $\frac{q}{p}$
+\item reduce gap by $n$: $\left (\frac{q}{p}\right )^n$
 \end{itemize}
 \item if $p \ge q$ it is certain that the adversary will win : 
 \end{itemize}
@@ -195,7 +201,7 @@ $p$ the probability of adding a honest block and $q = (1-p)$ the probability the
 \color{red!50!black} \large The attack of the $51\%$
 \end{center}
 
-In practice :
+In practice: $10^{18}$ operations by second in current network.
 
 \end{frame}
 
@@ -207,7 +213,12 @@ Finally, what must we remember ? %luc
 \end{frame}
 
 \begin{frame}
-Bibliography % thibaut
+\frametitle{Bibliography}
+\begin{itemize}
+\item Original article from Satoshi Nakamoto at https://bitcoin.org/bitcoin.pdf
+\item Article on Quartz newspaper : http://qz.com/84056/the-bitcoin-network-is-now-more-powerful-than-the-top-500-supercomputers-combined/
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}
