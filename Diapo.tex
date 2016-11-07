@@ -52,7 +52,7 @@ How to ensure the inviolability of data without trusting a $3^{\mathrm {rd}}$ pa
         \end{column}
         \hfill
         \begin{column}{.48\linewidth}
-            {\color{green}\rule{\linewidth}{4pt}
+            {\color{green!40!black}\rule{\linewidth}{4pt}
 
             The RSA example}
 
@@ -72,7 +72,121 @@ How to ensure the inviolability of data without trusting a $3^{\mathrm {rd}}$ pa
 \end{frame}
 
 \section{Blockchain}
-% II : 3 frames  %thibaut
+
+%ideas :
+% block depencis
+% network node : majority rule
+% difficulty
+
+
+\begin{frame}
+\frametitle{Certification by sharing}
+\begin{center}
+\vspace{-3mm}
+\begin{columns}[T]
+        \begin{column}{.48\textwidth}
+            {\color{blue}\rule{\linewidth}{4pt}
+
+            Third party way}
+            \begin{itemize}
+            \item You and the seller go the bank and agree on terms.
+            \item The bank verify and record the contract
+            \item You trust the bank for keeping contract unmodified
+            \end{itemize}
+            
+            {\color{red} Problem :}
+            
+            Do you really trust the bank ?
+
+        \end{column}
+        \hfill
+        \begin{column}{.48\linewidth}
+            {\color{green!40!black}\rule{\linewidth}{4pt}
+
+            Peer to peer way}
+            
+            \begin{itemize}
+            \item You tell everybody about the contract
+            \item Each node verify and record it if valid
+            \item You trust the majority for keeping contract unmodified
+            \end{itemize}           
+            
+            {\color{red} Problem :}
+            
+            It is really easy to create many fake identity and there are multiple versions
+
+        \end{column}
+    \end{columns}
+
+\end{center}
+
+\end{frame}
+
+\begin{frame}[fragile] % fragile <= asy
+\frametitle{The Blockchain}
+\begin{center}
+\begin{asy}
+unitsize(1cm);
+
+void drawrect(string s ="", pair ori,pair size)
+{
+	draw(ori--(ori + (size.x,0))--(ori + size)--(ori + (0,size.y)) --cycle);
+	label(s,ori + size/2);
+}
+
+drawrect((0,0),(4,2.5));
+label ("Block", (2,2.15));
+drawrect("Hash",(0.2,1.1),(1.7,0.7));
+drawrect("Nonce",(2.1,1.1),(1.7,0.7));
+drawrect("DATA",(0.2,0.2),(3.6,0.7));
+draw((-0.5,1.45)--(0.2,1.45),EndArrow(SimpleHead));
+
+
+drawrect((5,0),(4,2.5));
+label ("Block", (7,2.15));
+drawrect("Hash",(5.2,1.1),(1.7,0.7));
+drawrect("Nonce",(7.1,1.1),(1.7,0.7));
+drawrect("DATA",(5.2,0.2),(3.6,0.7));
+
+draw((4,1.25)--(5.2,1.45),EndArrow(SimpleHead));
+
+\end{asy}
+\end{center}
+
+\begin{center}
+A simple rule : Always choose the longest chain
+\begin{columns}[T]
+        \begin{column}{.48\textwidth}
+            {\color{blue}\rule{\linewidth}{4pt}
+            One version}
+            
+			Every node agree on the longest chain : it is costly to have forgery longer than original
+            
+
+        \end{column}
+        \hfill
+        \begin{column}{.48\linewidth}
+            {\color{green!40!black}\rule{\linewidth}{4pt}
+            CPU Time Majority}
+            
+            Finding the right nonce is random : the one which tries more times succeed
+
+
+        \end{column}
+    \end{columns}
+
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Why it can't fail ?}
+$p$ the probability of adding a honest block and $q = (1-p)$.
+
+
+
+\end{frame}
 
 \section{Applications}
 % III : 1/2 frames %luc
