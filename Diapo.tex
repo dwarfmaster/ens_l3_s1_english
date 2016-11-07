@@ -47,6 +47,35 @@ How to ensure the inviolability of data without trusting a $3^{\mathrm {rd}}$ pa
 
 \begin{frame}
     \frametitle{Hash functions}
+    \begin{columns}[T]
+        \begin{column}{.48\linewidth}
+            {\color{blue}\rule{\linewidth}{4pt}
+
+            Properties}
+
+            $\mathscr{H} : E \rightarrow \{1, \ldots n\}$
+
+            \begin{itemize}
+                \item Quick to compute
+                \item Pre-image resistance: $h, \mathscr{H}(m) = h$
+                \item Second pre-image resistance: $m_1$, $\mathscr{H}(m_1) = \mathscr{H}(m_2)$
+                \item Collision: $\mathscr{H}(m_1) = \mathscr{H}(m_2)$
+            \end{itemize}
+        \end{column}
+        \hfill
+        \begin{column}{.48\linewidth}
+            {\color{green!40!black}\rule{\linewidth}{4pt}
+
+            Example of SHA2-512}
+
+            \begin{itemize}
+                \item $154 MiB/s$ on regular $2GHz$ computer
+                \item Around $6*10^{134}$ days on a $512$ $2GHz$ cores computer for preimage attack
+                \item Since 2016, collisions can be found in reasonnable time for a weakened variant
+                    of SHA2-512.
+            \end{itemize}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
