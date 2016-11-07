@@ -1,6 +1,7 @@
 \documentclass[12pt]{beamer}
 
 \input{init.tex}
+\usepackage{tikz}
 
 %Put a nice theme
 \usetheme{Berkeley}
@@ -45,10 +46,6 @@ How to ensure the inviolability of data without trusting a $3^{\mathrm {rd}}$ pa
 \section{Authentification}
 
 \begin{frame}
-    \frametitle{Hash function}
-\end{frame}
-
-\begin{frame}
     \frametitle{Asymmetric Encryption}
     \begin{columns}[T]
         \begin{column}{.48\textwidth}
@@ -74,6 +71,43 @@ How to ensure the inviolability of data without trusting a $3^{\mathrm {rd}}$ pa
                 m' &\equiv c^d (\text{mod } n) \\
                 m' = m &\tilde{\longrightarrow} M\\
             \end{align*}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Digital signature}
+    \begin{columns}[T]
+        \begin{column}{.48\linewidth}
+            {\color{blue}\rule{\linewidth}{4pt}
+
+            Properties}
+
+            \begin{itemize}
+                \item Authentification
+                \item Non-repudiation
+                \item Integrity
+            \end{itemize}
+        \end{column}
+        \hfill
+        \begin{column}{.48\linewidth}
+            {\color{red}\rule{\linewidth}{4pt}
+
+            Implementation}
+
+            \begin{center}
+            \begin{tikzpicture}
+                \draw (0,0) node {$M$};
+                \draw [->] (0,-0.2) -- (0,-0.8);
+                \draw (0,-1) node {$h$};
+                \draw [->] (0,-1.2) -- (0,-1.8);
+                \draw (0,-2) node {$s$};
+                \draw [->] (0,-2.2) -- (0,-2.8);
+                \draw (0,-3) node {$(M,s)$};
+                \draw (0.2,-0.2) .. controls (1,-1.5) .. (0.2,-2.8) [->];
+            \end{tikzpicture}
+            \end{center}
+
         \end{column}
     \end{columns}
 \end{frame}
